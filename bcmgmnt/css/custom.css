@@ -1,0 +1,47 @@
+@media(max-width: 600px){
+	.frnt-link{
+		width: 100px;
+	}
+}
+@media(min-width: 768px){
+	.nav-link.dropdown-toggle{
+		display: flex;
+	}
+
+	.nav-link.dropdown-toggle span{
+	    position: relative;
+	    bottom: 3px;
+	    margin-left: 3px;
+	}
+	.nav-link.dropdown-toggle::after{
+		position: relative;
+		top: 7px;
+	}
+}
+
+.pointer{
+	cursor: pointer;
+}
+
+button:focus{
+	outline: none !important;
+}
+
+textarea, textarea.form-control{
+	resize: none !important;
+}
+
+label.form-control{
+	border: none !important;
+	text-align: left;
+}
+.bglight{
+	background-color: #fff !important;
+}
+.rupeeIcon{
+	position: relative;
+	bottom: 1px;
+}
+#CustomersLoadMore, #OrdersLoadMore{
+	width: 110px;
+}

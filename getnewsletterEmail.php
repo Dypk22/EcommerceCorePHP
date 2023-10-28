@@ -1,0 +1,3 @@
+<?php
+   require('connection.php');$email=strip_tags(mysqli_real_escape_string($con,$_POST['newsletterEmail']));if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {echo 'invalid';}else{$query=mysqli_query($con, "select * from newsletter where email='$email'");$check=mysqli_num_rows($query);if($check<1){date_default_timezone_set("Asia/Kolkata");$added_on=date('Y-m-d h:i:s');mysqli_query($con,"insert into newsletter(email,added_on) values('$email','$added_on')");echo "valid";}else{echo "present";}}
+   ?>

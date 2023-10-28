@@ -1,0 +1,177 @@
+.pointer:hover {
+	cursor: pointer
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0
+}
+
+input[type=number] {
+	-moz-appearance: textfield
+}
+
+#mobile-error,
+#operator-error,
+#circle-error,
+#amount-error,
+#DTHoperator-error,
+#cardNumber-error,
+#DTHamount-error {
+	margin: 5px 0;
+	color: #0071cc;
+	width: 100%;
+	text-transform: capitalize
+}
+
+#DTHamount-error {
+	width: 100%;
+}
+
+.hover {
+	cursor: pointer
+}
+
+.modal.fade.show {
+	padding-right: 0!important
+}
+
+.zindex {
+	z-index: 999
+}
+
+.sticky-top {
+	z-index: 990!important
+}
+
+li.active,
+.nav-link.active {
+	pointer-events: none
+}
+
+html {
+	scroll-behavior: smooth;
+	transition: .5s all ease
+}
+
+.validate {
+	border: 1px solid #2aaff2;
+	box-shadow: 2px 2px 10px #9ccde5
+}
+
+a.text-light:hover {
+	color: #000!important
+}
+
+.wait {
+	margin-bottom: 3px;
+	margin-right: 2px;
+	height: 10px;
+	width: 10px;
+}
+
+.spinner-grow {
+	height: 20px;
+	width: 20px;
+	color: #fff
+}
+
+.paid-wallet {
+	text-decoration: underline
+}
+
+.paid-wallet:hover {
+	color: #0071cc;
+	transition: .5s ease all;
+	text-decoration: none
+}
+
+label.pointer {
+	margin-bottom: 0
+}
+
+.tooltip-inner {
+	max-width: 250px
+}
+
+.swal2-cancel {
+	margin: 10px
+}
+
+.offerBox {
+	padding: 20px;
+	background: #fff;
+	border-radius: 10px;
+	width: 100%!important;
+	margin: 0 5px 10px 5px!important
+}
+
+.offerBox .img-thumb img {
+	border-radius: 45%!important;
+	height: 80px;
+	margin-top: 10px
+}
+
+.offerBox .img-thumb {
+	margin-right: 30px!important;
+	width: 80px;
+	text-align: center
+}
+
+.caption-heading {
+	font-size: 1rem;
+	font-weight: 600
+}
+
+@media(max-width:600px) {
+	.ordersImg {
+		display: none !important;
+	}
+	.signup_name {
+		font-size: 13px!important;
+		padding: 5px 10px!important
+	}
+	.offerBox {
+		padding: 20px 10px;
+		margin: 1rem
+	}
+}
+
+@media(min-width:768px) {
+	.offerBox .img-thumb img {
+		margin-right: 20px
+	}
+}
+
+@media(min-width:768px) and (max-width:999px) {
+	.offerBox .img-thumb img {
+		margin-top: 0!important
+	}
+}
+
+@media(min-width:1024px) {
+	.offerBox {
+		width: 48%!important;
+		margin: auto
+	}
+	.offerBox .img-thumb img {
+		margin-right: 0
+	}
+}
+
+.tnc-tag {
+	font-size: 10px!important
+}
+
+@media(min-width:1200px) {
+	.offerBox .img-thumb img {
+		margin-top: 20px
+	}
+}
+
+@media (min-width: 1200px) {
+	.resp-vtabs .resp-tabs-list li label {
+		font-size: 15px;
+	}
+}

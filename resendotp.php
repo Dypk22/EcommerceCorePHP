@@ -1,0 +1,1 @@
+<?php require'connection.php'; require 'functions.php'; $uid=$_SESSION['USER_ID']; $is_mobile_verified=mysqli_fetch_assoc(mysqli_query($con,"select * from users where id='$uid'")); if ($is_mobile_verified['email_status']=='unverified') { send_otp_mail($_SESSION['first_time_register_otp'],$_SESSION['USER_EMAIL'],$_SESSION['USER_NAME']); } ?>

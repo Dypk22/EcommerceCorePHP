@@ -1,0 +1,44 @@
+php_value output_buffering On
+php_value output_handler mb_output_handler
+RewriteEngine on 
+# Return file extension .php
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.php -f
+  RewriteRule ^(.*)$ $1.php [NC,L]
+# Return 404 if original request is not find
+  #ErrorDocument 404 http://localhost/recharge/error
+# Return 404 if original request is .php
+  RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
+  RewriteRule .* - [L,R=404]
+# Return 404 if original request is .html
+  RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.html[? ].*$"
+  RewriteRule .* - [L,R=404]
+# code for proceed recharge page
+  RewriteRule ^proceed/recharge$ recharge-order-summary
+# code for home page i.e. index page
+  RewriteRule ^home$ index
+# code for offer detail page
+  RewriteRule ^offer/detail/(.*)$ offer-detail?slug=$1 [QSA,L]
+# code for reset password page
+  RewriteRule ^reset/token/([0-9]+)$ resetpassword?token=$1 [QSA,L]
+# code for mobile recharge receipt page
+  RewriteRule ^receipt/mobile/([0-9]+)$ invoice?type=mobile&txn=$1 [QSA,L]
+  RewriteRule ^receipt/dth/([0-9]+)$ invoice?type=dth&txn=$1 [QSA,L]
+
+  RewriteRule ^referral/user/([a-z0-9]+)$ signup?type=user&referral=$1 [QSA,L]
+  RewriteRule ^pay/recharge/([0-9]+)$ payment/demo/submit?type=recharge&amount=$1 [QSA,L]
+  RewriteRule ^pay/dth/([0-9]+)$ payment/demo/submit?type=dthRecharge&amount=$1 [QSA,L]
+  RewriteRule ^pay/add/money/([0-9]+)$ payment/demo/submit?type=add-money&amount=$1 [QSA,L]
+
+# Admin Panel Code From here
+  RewriteRule ^bcmgmnt/recharge-detail/([0-9]+)$ bcmgmnt/mobile-recharge-detail?txn=$1 [QSA,L]
+  RewriteRule ^bcmgmnt/customer/([0-9]+)$ bcmgmnt/customers-detail?id=$1 [QSA,L]
+  RewriteRule ^bcmgmnt/coupon-manage/([0-9]+)$ bcmgmnt/manage-coupon?id=$1 [QSA,L]
+  RewriteRule ^bcmgmnt/airtel/plans/([0-9]+)$ bcmgmnt/airtel-plans-detail?id=$1 [QSA,L]
+  RewriteRule ^bcmgmnt/offers/detail/([0-9]+)$ bcmgmnt/offer-detail?id=$1 [QSA,L]
+  RewriteRule ^bcmgmnt/jio/plans/([0-9]+)$ bcmgmnt/jio-plans-detail?id=$1 [QSA,L]
+  RewriteRule ^bcmgmnt/vi/plans/([0-9]+)$ bcmgmnt/vi-plans-detail?id=$1 [QSA,L]
+  RewriteRule ^bcmgmnt/bsnl/plans/([0-9]+)$ bcmgmnt/bsnl-plans-detail?id=$1 [QSA,L]
+  RewriteRule ^bcmgmnt/customer/orders/([0-9]+)$ bcmgmnt/customers-orders?id=$1 [QSA,L]
+  RewriteRule ^bcmgmnt/customer/wallet/([0-9]+)$ bcmgmnt/customers-wallet-details?id=$1 [QSA,L]
+  
